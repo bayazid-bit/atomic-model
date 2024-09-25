@@ -3,32 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Web Page</title>
+    <title>Radarford Atomic Design</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Beautiful Web Page</h1>
-        <p>Creating stunning websites is easy with HTML and CSS!</p>
-    </header>
-    <main>
-        <section class="features">
-            <div class="feature">
-                <h2>Feature 1</h2>
-                <p>Beautiful design and responsive layout.</p>
-            </div>
-            <div class="feature">
-                <h2>Feature 2</h2>
-                <p>Easy to customize and extend.</p>
-            </div>
-            <div class="feature">
-                <h2>Feature 3</h2>
-                <p>Optimized for performance and accessibility.</p>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Md.bayazid. All rights reserved.</p>
-    </footer>
+    <div class="container">
+        <header class="header">
+            <h1>Radarford Atomic Design</h1>
+            <button id="startButton">Start Radar</button>
+        </header>
+        <div class="radar">
+            <div class="beam"></div>
+            <div class="ping" id="ping"></div>
+        </div>
+        <footer class="footer">
+            <p>© 2024 Your Name</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
