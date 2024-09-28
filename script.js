@@ -1,13 +1,8 @@
-const ping = document.getElementById('ping');
-const startButton = document.getElementById('startButton');
+const electron1 = document.getElementById('electron-1');
+const electron2 = document.getElementById('electron-2');
 
-startButton.addEventListener('click', () => {
-    ping.style.display = 'block';
-    ping.style.animation = 'none'; // Reset animation
-    void ping.offsetWidth; // Trigger reflow
-    ping.style.animation = 'ping-animation 1s linear infinite';
-
-    setTimeout(() => {
-        ping.style.display = 'none';
-    }, 5000); // Stop ping after 5 seconds
-});
+// Create an animation for the second electron
+setInterval(() => {
+    electron1.style.transform = `rotate(${(parseFloat(getComputedStyle(electron1).transform.split(',')[1]) + 1)}deg)`;
+    electron2.style.transform = `rotate(${(parseFloat(getComputedStyle(electron2).transform.split(',')[1]) + 1)}deg)`;
+}, 100);
