@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radarford Atomic Design</title>
+    <title>পারমাণবিক মডেল</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Radarford Atomic Design</h1>
-            <button id="startButton">Start Radar</button>
-        </header>
-        <div class="radar">
-            <div class="beam"></div>
-            <div class="ping" id="ping"></div>
-        </div>
-        <footer class="footer">
-            <p>© 2024 MD.bayazid</p>
-        </footer>
+    <div class="nucleus"></div>
+    <div class="electron-orbit" id="orbit-1">
+        <div class="electron" id="electron-1"></div>
+    </div>
+    <div class="electron-orbit" id="orbit-2">
+        <div class="electron" id="electron-2"></div>
     </div>
     <script src="script.js"></script>
 </body>
