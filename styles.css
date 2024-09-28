@@ -1,68 +1,47 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-}
-
-.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.radar {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border: 5px solid #0f0;
+.nucleus {
+    width: 50px;
+    height: 50px;
+    background-color: #ff5722;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 255, 0, 0.1), rgba(0, 0, 0, 0) 70%);
+    position: relative;
 }
 
-.beam {
-    position: absolute;
-    width: 2px;
+.electron-orbit {
+    width: 150px;
     height: 150px;
-    background: #0f0;
-    transform-origin: bottom center;
-    animation: rotate 2s linear infinite;
+    border: 2px dashed #2196f3;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+    animation: rotate 5s linear infinite;
+}
+
+.electron {
+    width: 10px;
+    height: 10px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: -5px;
 }
 
 @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.ping {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #0f0;
-    border-radius: 50%;
-    animation: ping-animation 1s linear infinite;
-    display: none;
-}
-
-@keyframes ping-animation {
-    0% {
-        transform: scale(1);
-        opacity: 1;
+    from {
+        transform: rotate(0deg);
     }
-    100% {
-        transform: scale(5);
-        opacity: 0;
+    to {
+        transform: rotate(360deg);
     }
-}
-
-.footer {
-    margin-top: 20px;
-    text-align: center;
 }
