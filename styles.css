@@ -5,6 +5,15 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
+    perspective: 800px; /* Perspective for 3D effect */
+}
+
+.atom {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotate 10s linear infinite; /* Rotate the atom */
 }
 
 .nucleus {
@@ -12,7 +21,10 @@ body {
     height: 50px;
     background-color: #ff5722;
     border-radius: 50%;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .electron-orbit {
@@ -21,9 +33,10 @@ body {
     border: 2px dashed #2196f3;
     border-radius: 50%;
     position: absolute;
-    top: calc(50% - 75px);
-    left: calc(50% - 75px);
-    animation: rotate 5s linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    animation: rotate-orbit 5s linear infinite; /* Rotate the orbit */
 }
 
 .electron {
@@ -39,9 +52,18 @@ body {
 
 @keyframes rotate {
     from {
-        transform: rotate(0deg);
+        transform: rotateY(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes rotate-orbit {
+    from {
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotateY(360deg);
     }
 }
